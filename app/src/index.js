@@ -40,7 +40,18 @@ const App = {
   },
 
   // Implement Task 4 Modify the front end of the DAPP
-  lookUp: async function () {},
+  lookUp: async function () {
+    const { lookUptokenIdToStarInfo } = this.meta.methods;
+    const id = document.getElementById('lookid').value;
+    const starName = await lookUptokenIdToStarInfo(id).call({
+      from: this.account,
+    });
+    App.setStatus(
+      starName
+        ? 'Star name is ' + starName + '.'
+        : 'The star with the specified ID does not exist.',
+    );
+  },
 };
 
 window.App = App;
