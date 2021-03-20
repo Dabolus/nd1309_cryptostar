@@ -62,7 +62,7 @@ contract StarNotary is ERC721 {
         view
         returns (string memory)
     {
-        //1. You should return the Star saved in tokenIdToStarInfo mapping
+        return tokenIdToStarInfo[_tokenId].name;
     }
 
     // Implement Task 1 Exchange Stars function
