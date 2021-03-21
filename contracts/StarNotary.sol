@@ -91,6 +91,6 @@ contract StarNotary is ERC721 {
         );
 
         // Transfer the star
-        _transferFrom(msg.sender, _to1, _tokenId);
+        transferFrom(msg.sender, _to1, _tokenId);
     }
 }
